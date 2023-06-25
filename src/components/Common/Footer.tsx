@@ -15,8 +15,11 @@ const FooterWrapper = styled.div`
 const Footer: FunctionComponent = function () {
   return (
     <FooterWrapper>
-      Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2021 Developer Hyun, Powered By Gatsby.
+      Thank you for visiting my blog for Develop Log.
+      <a style={{ display: 'flex' }} href="https://github.com/Turtle-Hwan">
+        © 2023<div style={{ color: 'blue' }}>&nbsp; Turtle-Hwan</div>, Powered
+        by Gatsby.
+      </a>
     </FooterWrapper>
   )
 }

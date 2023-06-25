@@ -4,8 +4,8 @@ import ProfileImage from 'components/Main/ProfileImage'
 
 const Background = styled.div`
   width: 100%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  color: #ffffff;
+  background-color: #a1f6f7;
+  color: black;
 `
 
 const Wrapper = styled.div`
@@ -37,11 +37,11 @@ const Introduction: FunctionComponent = function () {
 
         <div>
           <SubTitle>Nice to Meet You,</SubTitle>
-          <Title>I'm Junior Frontend Developer Turtle-Hwan.</Title>
+          <Title>I'm Junior Developer Turtle-Hwan.</Title>
         </div>
       </Wrapper>
     </Background>
   )
 }
-
+//idea = 애너그램으로 글자들 쪼개지면서 위로 올라가기?
 export default Introduction
