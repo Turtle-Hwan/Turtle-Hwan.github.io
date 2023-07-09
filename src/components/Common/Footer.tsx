@@ -10,16 +10,31 @@ const FooterWrapper = styled.div`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `
 
 const Footer: FunctionComponent = function () {
   return (
     <FooterWrapper>
       Thank you for visiting my blog for Develop Log.
-      <a style={{ display: 'flex' }} href="https://github.com/Turtle-Hwan">
-        © 2023<div style={{ color: 'blue' }}>&nbsp; Turtle-Hwan</div>, Powered
-        by Gatsby.
-      </a>
+      <div style={{ display: 'flex' }}>
+        <a style={{ display: 'flex' }} href="https://github.com/Turtle-Hwan">
+          © 2023&nbsp;
+          <div style={{ color: 'green', textDecoration: 'underline' }}>
+            Turtle-Hwan
+          </div>
+          , Powered by&nbsp;
+        </a>
+        <a
+          style={{ textDecoration: 'underline' }}
+          href="https://github.com/gatsbyjs/gatsby"
+        >
+          Gatsby.
+        </a>
+      </div>
     </FooterWrapper>
   )
 }
