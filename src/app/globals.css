@@ -1,14 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    background-image: url("/windowxp.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    overflow: hidden; /* Prevents scrollbars on the desktop */
-  }
+@theme {
+  --font-family-sans: "Tahoma", sans-serif;
+
+  --color-xp-blue: #0058ee;
+  --color-xp-blue-dark: #003bbf;
+  --color-xp-green: #52964a;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("/windowxp.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  overflow: hidden;
 }
