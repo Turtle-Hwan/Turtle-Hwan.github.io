@@ -4,6 +4,7 @@ export interface IconData {
   id: string;
   title: string;
   iconUrl: string;
+  initialPosition?: { x: number; y: number };
 }
 
 export interface WindowData {

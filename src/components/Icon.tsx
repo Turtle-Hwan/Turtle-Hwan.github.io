@@ -12,12 +12,18 @@ interface IconProps {
 
 const Icon = ({ icon, onDoubleClick }: IconProps) => {
   const nodeRef = useRef<HTMLDivElement>(null);
-  
+  const defaultPosition = icon.initialPosition || { x: 40, y: 40 };
+
   return (
-    <Draggable handle=".handle" bounds="parent" nodeRef={nodeRef}>
+    <Draggable
+      handle=".handle"
+      bounds="parent"
+      nodeRef={nodeRef}
+      defaultPosition={defaultPosition}
+    >
       <div
         ref={nodeRef}
-        className="handle absolute top-10 left-10 w-24 h-24 flex flex-col items-center cursor-pointer"
+        className="handle absolute w-24 h-24 flex flex-col items-center cursor-pointer"
         onDoubleClick={onDoubleClick}
       >
         <Image src={icon.iconUrl} alt={icon.title} width={48} height={48} />

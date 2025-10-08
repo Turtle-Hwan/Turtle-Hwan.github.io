@@ -11,12 +11,14 @@ const initialIcons: IconData[] = [
   {
     id: 'my-computer',
     title: 'My Computer',
-    iconUrl: '/icons/my-computer.png', // Placeholder path
+    iconUrl: '/icons/my-computer.png',
+    initialPosition: { x: 20, y: 20 },
   },
   {
     id: 'recycle-bin',
     title: 'Recycle Bin',
-    iconUrl: '/icons/recycle-bin.png', // Placeholder path
+    iconUrl: '/icons/recycle-bin.png',
+    initialPosition: { x: 20, y: 120 },
   },
 ];
 
