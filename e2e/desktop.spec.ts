@@ -9,6 +9,8 @@ test.describe('Desktop', () => {
     // Check if desktop icons are visible
     await expect(page.getByText('My Computer')).toBeVisible();
     await expect(page.getByText('Recycle Bin')).toBeVisible();
+    await expect(page.getByText('Internet Explorer')).toBeVisible();
+    await expect(page.getByText('Notepad')).toBeVisible();
   });
 
   test('should open window when double-clicking an icon', async ({ page }) => {
@@ -85,6 +87,24 @@ test.describe('Desktop', () => {
     // Recycle Bin should be at (20, 120)
     expect(recycleBinBox!.x).toBe(20);
     expect(recycleBinBox!.y).toBe(120);
+
+    // Get Internet Explorer icon
+    const ieIcon = page.locator('div').filter({ hasText: /^Internet Explorer$/ }).first();
+    const ieBox = await ieIcon.boundingBox();
+    expect(ieBox).not.toBeNull();
+
+    // Internet Explorer should be at (20, 220)
+    expect(ieBox!.x).toBe(20);
+    expect(ieBox!.y).toBe(220);
+
+    // Get Notepad icon
+    const notepadIcon = page.locator('div').filter({ hasText: /^Notepad$/ }).first();
+    const notepadBox = await notepadIcon.boundingBox();
+    expect(notepadBox).not.toBeNull();
+
+    // Notepad should be at (20, 320)
+    expect(notepadBox!.x).toBe(20);
+    expect(notepadBox!.y).toBe(320);
   });
 
   test('should be able to drag icons', async ({ page }) => {
