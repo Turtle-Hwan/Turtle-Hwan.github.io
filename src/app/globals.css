@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-image: url("https://wallpaperhub.app/api/v1/get/14/2560x1440");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Tahoma", sans-serif;
+    overflow: hidden; /* Prevents scrollbars on the desktop */
+  }
+}
