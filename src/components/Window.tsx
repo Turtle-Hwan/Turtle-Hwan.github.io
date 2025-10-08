@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Draggable from 'react-draggable';
 import { useAppContext } from '@/contexts/AppContext';
 import { WindowData } from '@/types/types';
@@ -8,24 +8,30 @@ import Image from 'next/image';
 
 // This combines the base WindowData with the stateful properties
 interface WindowProps {
-  window: WindowData & { 
+  window: WindowData & {
     position: { x: number; y: number };
     size: { width: number; height: number };
-    zIndex: number; 
+    zIndex: number;
   };
 }
 
 const Window = ({ window }: WindowProps) => {
-  const { closeWindow, focusWindow } = useAppContext();
+  const { closeWindow, focusWindow, updateWindowPosition } = useAppContext();
+  const nodeRef = useRef<HTMLDivElement>(null);
 
   return (
     <Draggable
+      nodeRef={nodeRef}
       handle=".window-header"
       bounds="parent"
-      defaultPosition={window.position}
+      position={window.position}
       onStart={() => focusWindow(window.id)}
+      onStop={(e, data) => {
+        updateWindowPosition(window.id, { x: data.x, y: data.y });
+      }}
     >
       <div
+        ref={nodeRef}
         className="absolute bg-[#ece9d8] border border-[#d4d0c8] rounded-md shadow-lg"
         style={{ 
           width: window.size.width, 

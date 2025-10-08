@@ -16,6 +16,7 @@ interface AppContextType {
   openWindow: (windowData: WindowData) => void;
   closeWindow: (id: string) => void;
   focusWindow: (id: string) => void;
+  updateWindowPosition: (id: string, position: { x: number; y: number }) => void;
 }
 
 // == CONTEXT ==
@@ -64,8 +65,16 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const updateWindowPosition = (id: string, position: { x: number; y: number }) => {
+    setWindows(prev =>
+      prev.map(win =>
+        win.id === id ? { ...win, position } : win
+      )
+    );
+  };
+
   return (
-    <AppContext.Provider value={{ windows, openWindow, closeWindow, focusWindow }}>
+    <AppContext.Provider value={{ windows, openWindow, closeWindow, focusWindow, updateWindowPosition }}>
       {children}
     </AppContext.Provider>
   );

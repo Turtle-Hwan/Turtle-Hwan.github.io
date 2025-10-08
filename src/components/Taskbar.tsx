@@ -23,7 +23,7 @@ const Taskbar = () => {
   }, []);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 h-[40px] z-[9999]">
+    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40px', zIndex: 9999 }}>
       {/* Top border highlight */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-[#4590E5] to-[#4590E5]"></div>
       
