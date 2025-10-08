@@ -36,7 +36,7 @@ const Desktop = () => {
   };
 
   return (
-    <div className="relative w-full h-full">
+    <div className="absolute inset-0 pb-[40px]">
       {/* Render Desktop Icons */}
       {initialIcons.map((icon) => (
         <Icon 
