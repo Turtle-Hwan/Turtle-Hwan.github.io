@@ -4,10 +4,11 @@
 
 @layer base {
   body {
-    background-image: url("https://wallpaperhub.app/api/v1/get/14/2560x1440");
+    background-image: url("/windowxp.png");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Tahoma", sans-serif;
+    font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     overflow: hidden; /* Prevents scrollbars on the desktop */
   }
 }
